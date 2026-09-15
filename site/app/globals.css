@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Tokens — ClaravDecor
+  Color: Brandboard §4 (22-jul-2026), used verbatim.
+  Form:  Design config §2 (12-sep-2026), lever Risk/Trust + Craft/Method.
+  shadcn names are the real vocabulary; brand aliases only point with var().
+*/
+:root {
+  /* Marca (brandboard §4) */
+  --brand-espresso:  #3A2E24;
+  --brand-mocha:     #8C6F56;
+  --brand-taupe:     #B69572;
+  --brand-champagne: #DCCBB8;
+  --brand-ivory:     #F7F3EE;
+  --brand-sage:      #B7C1A8;
+  --brand-blue:      #AFC4D5;
+  --brand-blush:     #E8D6D0;
+
+  /* Roles (brandboard §4) */
+  --color-bg:             var(--brand-ivory);
+  --color-surface:        #FFFFFF;
+  --color-surface-alt:    var(--brand-champagne);
+  --color-surface-dark:   var(--brand-espresso);
+  --color-text:           var(--brand-espresso);   /* 11.91:1 AAA */
+  --color-text-muted:     #6B5B4C;                 /*  6.60:1 AA  */
+  --color-text-on-dark:   var(--brand-ivory);
+  --color-text-on-dark-muted: var(--brand-champagne);
+  --color-primary:        var(--brand-mocha);
+  --color-primary-hover:  #755C46;
+  --color-on-primary:     #FFFFFF;                 /* 4.64:1 AA */
+  --color-accent:         var(--brand-taupe);
+  --color-on-accent:      var(--brand-espresso);   /* 4.72:1 AA. NUNCA blanco. */
+  --color-border:         #E2D8CC;
+  --color-border-strong:  var(--brand-champagne);
+  --color-success:        #4F6B4A;
+  --color-error:          #8C3A2E;
+  --color-focus-ring:     var(--brand-mocha);
+
+  /* shadcn vocabulary → brand roles (design config §2) */
+  --background:            var(--color-bg);
+  --foreground:            var(--color-text);
+  --card:                  var(--color-surface);
+  --card-foreground:       var(--color-text);
+  --muted:                 var(--color-surface-alt);
+  --muted-foreground:      var(--color-text-muted);
+  --primary:               var(--color-primary);
+  --primary-hover:         var(--color-primary-hover);
+  --primary-foreground:    var(--color-on-primary);
+  --secondary:             var(--color-surface-dark);
+  --secondary-foreground:  var(--color-text-on-dark);
+  --secondary-foreground-muted: var(--color-text-on-dark-muted);
+  --accent:                var(--color-accent);
+  --accent-foreground:     var(--color-on-accent);
+  --border:                var(--color-border);
+  --input:                 var(--color-border-strong);
+  --ring:                  var(--color-focus-ring);
+  --success:               var(--color-success);
+  --error:                 var(--color-error);
+
+  /* Forma — design config §2 (Risk/Trust: radius 8, not pill) */
+  --radius: 0.5rem;
+  --container-max: 80rem;
+  --container-pad: 1.5rem;
+  --measure: 68ch;
+
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem; --space-12: 3rem; --space-16: 4rem;
+  --space-24: 6rem;  --space-32: 8rem;
+  --section-y: var(--space-16);
+  --section-y-lg: var(--space-24);
+  --section-y-editorial: calc(var(--section-y-lg) * 1.5);
+
+  --fs-h1: clamp(2.375rem, 4.5vw, 3.25rem);
+  --fs-h2: clamp(2rem, 3.5vw, 2.5rem);
+  --fs-h3: clamp(1.625rem, 2.5vw, 1.875rem);
+  --fs-h4: 1.375rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body: 1rem;
+  --fs-caption: .875rem;
+  --fs-eyebrow: .75rem;
+
+  --fw-h1: 400;
+  --fw-h: 400; --fw-h4: 600; --fw-body: 400; --fw-btn: 600;
+  --lh-tight: 1.1; --lh-heading: 1.25; --lh-body: 1.7;
+  --ls-eyebrow: .16em; --ls-btn: .04em;
+
+  --border-w: 1px;
+  --shadow-card: 0 1px 3px rgba(58, 46, 36, .07);
+  --hero-scrim: .45;
+
+  --motion-fast: 150ms; --motion-base: 200ms; --motion-ease: ease;
+  --tap-min: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; --motion-base: 0ms; }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), 'Helvetica Neue', Arial, sans-serif;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display), Georgia, 'Times New Roman', serif;
+    font-weight: var(--fw-h);
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+  h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); font-weight: var(--fw-h1); }
+  h2 { font-size: var(--fs-h2); line-height: var(--lh-heading); }
+  h3 { font-size: var(--fs-h3); line-height: 1.3; }
+  h4 { font-size: var(--fs-h4); line-height: 1.4; font-weight: var(--fw-h4); }
+  section { scroll-margin-top: 6rem; }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+  a { transition: color var(--motion-base) var(--motion-ease), opacity var(--motion-base) var(--motion-ease); }
+}
+
+@layer components {
+  .container-c3 {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+  }
+  .section-y { padding-block: var(--section-y); }
+  @media (min-width: 768px) { .section-y { padding-block: var(--section-y-lg); } }
+  .section-y-editorial { padding-block: var(--section-y); }
+  @media (min-width: 768px) { .section-y-editorial { padding-block: var(--section-y-editorial); } }
+
+  .eyebrow {
+    font-family: var(--font-body), sans-serif;
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .measure { max-width: var(--measure); }
+  .lead { font-size: var(--fs-body-lg); line-height: var(--lh-body); }
+
+  /* Buttons — brandboard §4 treatment, radius from design config (not pill). */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: var(--tap-min);
+    font-family: var(--font-body), sans-serif;
+    font-size: .9375rem;
+    font-weight: var(--fw-btn);
+    letter-spacing: var(--ls-btn);
+    line-height: 1;
+    padding: .875rem 2rem;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color var(--motion-base) var(--motion-ease),
+                color var(--motion-base) var(--motion-ease),
+                border-color var(--motion-base) var(--motion-ease);
+  }
+  .btn-primary { background: var(--primary); color: var(--primary-foreground); }
+  .btn-primary:hover { background: var(--primary-hover); }
+  .btn-secondary { background: var(--accent); color: var(--accent-foreground); }
+  .btn-secondary:hover { background: var(--brand-champagne); }
+  .btn-outline { background: transparent; color: var(--foreground); border-color: var(--input); }
+  .btn-outline:hover { background: var(--muted); }
+  .btn-on-dark { background: var(--brand-ivory); color: var(--brand-espresso); }
+  .btn-on-dark:hover { background: var(--brand-champagne); }
+  .btn-outline-on-dark { background: transparent; color: var(--brand-ivory); border-color: var(--brand-champagne); }
+  .btn-outline-on-dark:hover { background: rgba(247, 243, 238, .10); }
+
+  /* Hero scrim: Espresso at 45% (brandboard §1 minimum 40%). */
+  .hero-scrim {
+    background: rgba(58, 46, 36, var(--hero-scrim));
+  }
+  .hero-scrim-gradient {
+    background: linear-gradient(to top, rgba(58, 46, 36, .70) 0%, rgba(58, 46, 36, var(--hero-scrim)) 45%, rgba(58, 46, 36, .30) 100%);
+  }
+
+  /* Gallery tiles: 4:5, no radius, no border, hover opacity .92 (design config §3). */
+  .gallery-tile { aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: var(--muted); }
+  .gallery-tile img { transition: opacity var(--motion-base) var(--motion-ease); }
+  .gallery-tile:hover img { opacity: .92; }
+
+  /* FAQ — native details, server-rendered, no JS needed. */
+  .faq-item { border-top: var(--border-w) solid var(--border); }
+  .faq-item:last-child { border-bottom: var(--border-w) solid var(--border); }
+  .faq-item summary { list-style: none; cursor: pointer; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .faq-icon { transition: transform var(--motion-base) var(--motion-ease); }
+  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+
+  /* Form fields — 1px --input border, visible labels always. */
+  .field-input {
+    width: 100%;
+    min-height: var(--tap-min);
+    background: var(--card);
+    color: var(--foreground);
+    border: var(--border-w) solid var(--input);
+    border-radius: var(--radius);
+    padding: .75rem 1rem;
+    font-size: var(--fs-body);
+    transition: border-color var(--motion-base) var(--motion-ease);
+  }
+  .field-input:focus { border-color: var(--ring); outline: none; box-shadow: 0 0 0 2px var(--ring); }
+}

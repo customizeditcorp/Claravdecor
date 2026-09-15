@@ -53,3 +53,11 @@ La tensión registrada: el sitio no puede abrir con confianza y mostrar cuatro f
 - Convención de nombres: la fecha en el nombre de un documento es la de creación, no la de última edición. Un archivo puede tener una versión más reciente en su contenido sin renombrarse (ej. el sitemap 12-sep contiene la v2 del 14-sep).
 - Las fotos listas para web están en `04-Fotos/02-procesadas/` (máx. 2000 px, nombres SEO, `alt-map.json` con los textos alternativos).
 - `04-Fotos/01-gbp-raw/` está en `.gitignore` y no se sube al repo.
+
+## Sitio web (Next.js) — `site/`
+
+- El código del sitio vive en `site/` (Next.js App Router, Tailwind 3, `lib/site.ts` como objeto único de negocio, `lib/photos.ts` como registro de fotos con alt real, `lib/schema.ts` para JSON-LD).
+- Host canónico: `https://claravdecor.com` (apex, sin www), fijado en `business.url` de `site/lib/site.ts`.
+- Comandos: `npm --prefix site run build` (build de producción), `npm --prefix site run dev` (desarrollo). Servidores de preview en `.claude/launch.json` (`claravdecor-site` en el puerto 3050, `claravdecor-dev` en el 3051).
+- QA obligatoria antes de publicar: ver el source con JS desactivado (o `curl`) y confirmar copy, `alt` y bloques `ld+json`. Los pendientes visibles en el sitio llevan `data-pending="..."`; buscar ese atributo para localizar lo que falta confirmar con Clara.
+- El formulario de contacto envía a `CONTACT_WEBHOOK_URL` (variable de entorno). Sin ella, el formulario muestra los canales directos en lugar de fingir el envío.

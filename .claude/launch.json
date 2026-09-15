@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "claravdecor-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "site", "run", "start", "--", "-p", "3050"],
+      "port": 3050
+    },
+    {
+      "name": "claravdecor-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "site", "run", "dev", "--", "-p", "3051"],
+      "port": 3051
+    }
+  ]
+}
