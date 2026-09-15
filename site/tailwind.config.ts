@@ -13,7 +13,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-body)", "'Helvetica Neue'", "Arial", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "'Times New Roman'", "serif"],
+        display: ["var(--font-display)", "Georgia", "'Times New Roman'", "serif"], // Playfair Display via next/font
       },
       colors: {
         border: "var(--border)",
@@ -42,7 +42,7 @@ const config = {
         h1: ["var(--fs-h1)", { lineHeight: "var(--lh-tight)", fontWeight: "400" }],
         h2: ["var(--fs-h2)", { lineHeight: "var(--lh-heading)", fontWeight: "400" }],
         h3: ["var(--fs-h3)", { lineHeight: "1.3", fontWeight: "400" }],
-        h4: ["var(--fs-h4)", { lineHeight: "1.4", fontWeight: "600" }],
+        h4: ["var(--fs-h4)", { lineHeight: "1.3", fontWeight: "500" }],
         "body-lg": ["var(--fs-body-lg)", { lineHeight: "var(--lh-body)" }],
         body: ["var(--fs-body)", { lineHeight: "var(--lh-body)" }],
         caption: ["var(--fs-caption)", { lineHeight: "1.5" }],

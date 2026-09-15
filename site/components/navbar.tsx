@@ -31,10 +31,10 @@ export function Navbar() {
             <Image
               src="/brand/clarav-lockup-horizontal-taupe.svg"
               alt={`${business.name} ${business.descriptor}`}
-              width={168}
-              height={56}
+              width={192}
+              height={64}
               priority
-              className="h-12 w-auto md:h-14"
+              className="h-14 w-auto md:h-16"
             />
           </Link>
 
@@ -57,7 +57,7 @@ export function Navbar() {
                     key={s.href}
                     href={s.href}
                     className={cn(
-                      "block rounded-md px-3 py-2.5 text-caption font-medium transition-colors hover:bg-muted",
+                      "nav-link-type block rounded-md px-3 py-2.5 transition-colors hover:bg-muted",
                       pathname === s.href ? "text-primary" : "text-foreground"
                     )}
                   >
@@ -124,7 +124,7 @@ export function Navbar() {
 }
 
 const navLinkClass =
-  "inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-eyebrow uppercase tracking-[0.12em] font-semibold transition-colors hover:text-primary xl:px-3"
+  "nav-link-type inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2 transition-colors hover:text-primary xl:px-3"
 
 function NavLink({ href, label, active }: { href: string; label: string; active: boolean }) {
   return (
@@ -139,7 +139,7 @@ function MobileLink({ href, label, active, nested }: { href: string; label: stri
     <Link
       href={href}
       className={cn(
-        "block rounded-md px-3 py-2.5 text-body font-medium transition-colors",
+        "nav-link-type block rounded-md px-3 py-2.5 !text-[1.125rem] transition-colors",
         nested && "pl-6",
         active ? "text-primary" : "text-foreground hover:bg-muted"
       )}

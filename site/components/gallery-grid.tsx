@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import { photoSrc, type Photo } from "@/lib/photos"
 import { cn } from "@/lib/utils"
+import { Reveal } from "@/components/reveal"
 
 /*
   Gallery — visual proof treated as a component, not a global axis (design config §3):
@@ -15,7 +16,7 @@ export function GalleryGrid({ photos, columns = 4, priorityCount = 0, className 
   return (
     <ul className={cn("grid grid-cols-2 gap-2 md:grid-cols-3", columns === 4 && "xl:grid-cols-4", className)}>
       {photos.map((p, i) => (
-        <li key={p.file} className="gallery-tile">
+        <Reveal as="li" key={p.file} className="gallery-tile" delay={Math.min(i, 7) * 40}>
           <Image
             src={photoSrc(p)}
             alt={p.alt}
@@ -24,7 +25,7 @@ export function GalleryGrid({ photos, columns = 4, priorityCount = 0, className 
             priority={i < priorityCount}
             className="object-cover"
           />
-        </li>
+        </Reveal>
       ))}
     </ul>
   )

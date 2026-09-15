@@ -52,7 +52,7 @@ export default function ServiceAreasPage() {
           </div>
           <div className="md:col-span-6 grid gap-10 sm:grid-cols-2">
             <div>
-              <h3 className="!text-h4 !font-sans !font-semibold">Core area</h3>
+              <h3 className="subtitle">Core area</h3>
               <p className="mt-1 text-caption text-muted-foreground">No travel fee</p>
               <ul className="mt-4 space-y-2">
                 {areas.core.map((c) => (
@@ -61,7 +61,7 @@ export default function ServiceAreasPage() {
               </ul>
             </div>
             <div>
-              <h3 className="!text-h4 !font-sans !font-semibold">Extended area</h3>
+              <h3 className="subtitle">Extended area</h3>
               <p className="mt-1 text-caption text-muted-foreground">Distance fee applies, shown in your quote</p>
               <ul className="mt-4 space-y-2">
                 {areas.extended.map((c) => (

@@ -1,10 +1,11 @@
 import Link from "next/link"
 
 import { processSteps, cta } from "@/lib/site"
+import { Reveal } from "@/components/reveal"
 
 /*
   "How it works" — the Craft/Method reinforcement. Editorial density (1.5× section padding),
-  two columns, step number in Cormorant 56px weight 300 (the only place 300 is allowed),
+  two columns, step number in Playfair 56px weight 400 (Playfair ships no 300),
   1px hairlines between steps, no cards, no icons. Mockup is its own step.
 */
 export function ProcessSteps({ compact = false }: { compact?: boolean }) {
@@ -23,19 +24,19 @@ export function ProcessSteps({ compact = false }: { compact?: boolean }) {
         </div>
         <ol className="md:col-span-7">
           {processSteps.map((step, i) => (
-            <li key={step.title} className="grid grid-cols-[auto_1fr] gap-6 border-t border-border py-8 last:border-b md:gap-10 md:py-10">
-              <span className="font-display text-[3.5rem] font-light leading-none text-accent" aria-hidden="true">
+            <Reveal as="li" key={step.title} delay={i * 80} className="grid grid-cols-[auto_1fr] gap-6 border-t border-border py-8 last:border-b md:gap-10 md:py-10">
+              <span className="font-display text-[3.5rem] font-normal leading-none text-accent" aria-hidden="true">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h3 className="!text-h4 !font-sans !font-semibold">
+                <h3 className="subtitle">
                   <span className="sr-only">Step {i + 1}: </span>
                   {step.title}
                 </h3>
                 <p className="mt-3 text-muted-foreground">{step.body}</p>
                 {/* [TO CONFIRM] real mockup example image slot — intentionally hidden until it exists (doc 11 §11). */}
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>

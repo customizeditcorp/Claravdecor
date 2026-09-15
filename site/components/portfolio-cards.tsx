@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 import { byFile, photoSrc } from "@/lib/photos"
+import { Reveal } from "@/components/reveal"
 
 /*
   Home "Portfolio by event type" — ServiceGrid treatment: --card, --border, --shadow-card, radius,
@@ -27,22 +28,22 @@ export function PortfolioCards() {
           <Link href="/gallery" className="btn btn-outline">See all our work</Link>
         </div>
         <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-          {cards.map((c) => (
-            <li key={c.label} className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
+          {cards.map((c, i) => (
+            <Reveal as="li" key={c.label} delay={i * 60} className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
               <Link href={c.href} className="block">
                 <div className="gallery-tile">
                   <Image src={photoSrc(c.photo)} alt={c.photo.alt} fill sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw" className="object-cover" />
                 </div>
               </Link>
               <div className="p-4">
-                <h3 className="!text-h4 !font-sans !font-semibold">
+                <h3 className="subtitle">
                   <Link href={c.href} className="hover:text-primary">{c.label}</Link>
                 </h3>
                 <Link href={c.page} className="mt-1 inline-block text-caption text-muted-foreground underline-offset-4 hover:text-primary hover:underline">
                   Service details
                 </Link>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

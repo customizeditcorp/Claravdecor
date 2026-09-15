@@ -133,3 +133,88 @@ Contrastes ya validados en Brandboard §2: Espresso sobre Ivory 11.91:1, sobre C
 - Foto horizontal de montaje y fotos de proceso: no existen → hero con recorte dirigido; segundo lote de Clara con checklist (horizontal desde la entrada, detalle, ella instalando).
 - Mockup real de ejemplo `[TO CONFIRM]` → slot oculto en ProcessSteps.
 - Base white-label `DESIGN.md`: este delta está escrito contra los defaults del skill; si el archivo base vive en el repo de referencia, aplicar este delta encima sin tocar el base.
+
+---
+
+## 7. Registro de evidencia — investigación en Refero (14-sep-2026, build)
+
+**Regla aplicada (CLAUDE.md global, punto 8):** la palanca fija hero archetype y orden de secciones; los valores concretos de forma son tendencias a contrastar con referencias reales. Este registro documenta qué se investigó, qué se encontró y por qué los valores de §1 se sostienen. Los valores **no cambiaron**: la evidencia los confirma.
+
+**Anclas de búsqueda usadas:** (a) palanca Riesgo/Confianza + Oficio/Método; (b) diferenciador real del negocio: estudio pequeño de decoración de eventos, premium en español, proceso visible (mockup → instalación); (c) paleta cálida Ivory/Espresso del brandboard. Consultas: "warm editorial serif event decor studio, ivory and espresso, calm trust-first landing with process steps and photo gallery" · "event planner or wedding decor portfolio site, photo grid gallery, flat surfaces, warm neutrals, sharp image edges" · "how it works process steps section, editorial two-column layout".
+
+**Referencias recuperadas (estilos completos, con tokens):**
+
+| Referencia | Sitio real | Qué es | Radius | Densidad / ritmo | Superficies |
+|---|---|---|---|---|---|
+| Apollo | apolloworkspace.com | Workspace premium, lino cálido + panel umber, hero serif sobre foto oscurecida | 3px en cards, imágenes, botones y nav | Espaciosa: gap de sección 68px, gap de elemento 20px | Lino claro dominante; panel oscuro (umber) solo en hero/full-bleed; sin sombras, bordes de 1px muy claros |
+| MANNA | mannaarchitects.com | Portafolio de arquitectura, canvas terroso | 0px en imágenes | Cómoda: gap de sección 40px, caption a 10px bajo la imagen | Plana, sin sombras ni elevación; imágenes como bloques abiertos, no cards |
+| Palmer | palmer-dinnerware.com | E-commerce tipo galería, crema cálido | 9px en cards, 3px en nav, 0px en botones | Cómoda: gap de sección 80px, gap de elemento 12px | Canvas crema; cards transparentes sobre el fondo; una sola barra oscura como ancla |
+| Katherine Pihl | katherinepihl.com | Portafolio gallery-first, retícula de módulos cuadrados | 0px | Cómoda: gap de sección 40px, gap 12px | Plana; interacción por borde de 1px al hover, sin fondos rellenos |
+| alet | aletagency.com | Agencia creativa, arcilla cálida | 10.8px en cards, pill en botones | Cómoda-amplia: gap de sección 101px | Plana, sin sombras; imágenes contenidas, a veces superpuestas |
+| Christopher Ireland / Cori Corinne / Cup of Couple | portafolios editoriales | Tipografía serif grande sobre pergamino | 0px | Espaciosa (48–60px) / cómoda (36px) | Planas, líneas finas de 1px como único divisor |
+
+### Eje Radius — valor final `--radius: 0.5rem` (8px) · **se sostiene**
+
+- **Qué se encontró:** el rango real del vertical "editorial cálido / galería" va de 0px (MANNA, Pihl, Ireland, Corinne, Cup of Couple) a 3px (Apollo) y 9–11px en cards (Palmer, alet). Ninguna referencia usa pill en el CTA principal salvo alet (agencia, no servicio local). El default de la tabla de palancas para Riesgo/Confianza (8–10px) cae dentro del rango observado pero en su extremo alto.
+- **Por qué encaja:** 8px en botones y cards mantiene el lado "serio" que la palanca pide (no pill, no "amable/social") sin llegar al 0px absoluto de los portafolios puros, que en un negocio de servicio local con formulario y CTAs leería frío. **Las imágenes de galería sí van a 0px** (§3), alineadas con MANNA/Pihl/Ireland: la foto es el bloque, no la card.
+- **Ajuste derivado de la evidencia:** ninguno en el valor. Se confirma la excepción ya prevista en §3 (galería sin radius).
+
+### Eje Densidad — secciones 64/96 (móvil/desktop), editorial 1.5× solo en "How it works" · **se sostiene**
+
+- **Qué se encontró:** los gaps de sección observados van de 36px (Cup of Couple, revista densa) a 101px (alet). La mediana del grupo cálido/galería está en 60–80px (Corinne 60, Apollo 68, Palmer 80). Todas las referencias usan dos columnas alternadas o texto + imagen con aire generoso; ninguna usa cards con íconos para explicar proceso.
+- **Por qué encaja:** 96px desktop está en el tercio alto del rango observado, coherente con la lectura "sin prisa" que Apollo describe como "unhurried, thoughtful rhythm". El 1.5× (144px) en la sección de proceso es el único punto por encima de todas las referencias salvo alet; se justifica porque es el refuerzo Oficio/Método y la única sección donde el usuario debe leer cinco pasos completos. Las líneas finas de 1px entre pasos replican el "Section Separator" de Apollo y los hairlines de Cup of Couple/Ireland.
+- **Ajuste derivado de la evidencia:** ninguno.
+
+### Eje Superficies — light-first, alternancia bg/card/muted, Espresso solo en scrim del hero, bloque de confianza y footer · **se sostiene**
+
+- **Qué se encontró:** todas las referencias del grupo son planas: sin sombras, sin glass, sin gradientes (Apollo: "favors a flatter design with subtle borders and color shifts for depth"; Palmer: elevación solo implícita en la foto; MANNA/Pihl/Corinne: explícitamente "no shadows"). El panel oscuro aparece **una sola vez** por página en las que lo usan: hero full-bleed (Apollo) o barra de navegación (Palmer). Ninguna usa dos bloques oscuros seguidos en el cuerpo.
+- **Por qué encaja:** la regla de §1 ("navy" = Espresso en tres lugares y nada más) coincide con el patrón observado de un panel oscuro como ancla. El bloque "What we handle / what we don't" ocupa ese lugar en el cuerpo; el footer y el scrim del hero son marcos, no cuerpo. La única sombra de card (`--shadow-card`, 1px 3px al 7 %) queda por debajo de todo lo observado y se usa solo en las cards de portafolio de la home y en el formulario, donde la referencia más cercana (Palmer) también admite cards suaves.
+- **Ajuste derivado de la evidencia:** ninguno. Se registra que Apollo confirma la elección de alternar lino/crema con un solo panel oscuro, y MANNA/Pihl confirman la galería como bloques abiertos sobre el fondo, sin card.
+
+### Lo que la evidencia NO sostiene y se dejó fuera
+- Cards con sombra visible y radius 12–16 (Prueba social) — ninguna referencia del grupo las usa.
+- Edge-to-edge global (Prueba visual) — solo alet/MANNA lo hacen, y son portafolios sin formulario ni CTA de servicio; en ClaravDecor se aplica únicamente como componente de galería.
+- Marquee o carrusel horizontal de imágenes (alet) — motion autoplay; ver §8.
+
+---
+
+## 8. Motion — revisión con Magic UI (14-sep-2026, build)
+
+**Regla aplicada (CLAUDE.md global, puntos 8 y 10):** el motion se investiga en Magic UI después de que todo el contenido está server-rendered, se reescribe contra los tokens del cliente y se vuelve a verificar con JS desactivado. La fila "Bordes / motion" de §1 ("transiciones 200 ms solo en color/opacidad, sin parallax, sin autoplay, sin contadores") era una tendencia, no una cifra cerrada; **queda superada solo en un punto**, documentado abajo.
+
+**Qué se buscó:** registro de Magic UI, consulta "fade reveal scroll text animate blur" (37 componentes). Se leyó el código fuente de `blur-fade` y `text-animate`.
+
+| Componente Magic UI | Qué hace | Decisión | Por qué |
+|---|---|---|---|
+| **blur-fade** | Entrada al viewport: opacidad 0 → 1, desplazamiento 6px, desenfoque 6px → 0, 400 ms ease-out, una sola vez (`useInView once`) | **Adoptado, reconstruido** | Es exactamente el registro "calmo" que pide Riesgo/Confianza: el contenido aparece asentándose, no saltando. Refuerza la lectura de galería como bloques que se van revelando (MANNA, Pihl) sin autoplay ni bucle. |
+| text-animate (blurInUp por palabra) | Anima el H1 palabra por palabra con blur | **Descartado** | Parte el H1 en `<span>` por palabra y lo esconde hasta hidratar: golpea LCP y el H1 deja de ser un nodo de texto limpio. La palanca pide un H1 legible y estable, no teatral. |
+| text-reveal | Texto que se opaca/desopaca con el scroll (scroll-linked) | Descartado | Es parallax de texto; contradice "sin parallax" y no aporta a la confianza. |
+| marquee | Carrusel infinito autoplay (reseñas/logos) | Descartado | Autoplay; 7 reseñas no llenan un carrusel y el buyer necesita leerlas, no verlas pasar. |
+| number-ticker | Contador animado | Descartado | No hay cifras que celebrar (7 reseñas) y §1 lo excluye por lectura "inflada". |
+| animated-shiny-text, aurora-text, sparkles-text, border-beam, dia-text-reveal | Brillos, gradientes, destellos | Descartados | Registro "fun/tech"; el brandboard es mate y sobrio (Apollo: "flatter design with subtle borders"). |
+| progressive-blur, scroll-progress | Utilidades de scroll | Descartados | No hay contenedores con scroll interno ni artículos largos. |
+
+**Cómo se reconstruyó `blur-fade` en ClaravDecor** (`site/components/reveal.tsx` + tokens en `globals.css`):
+- Sin la dependencia `motion` (≈30 KB): `IntersectionObserver` + transiciones CSS sobre `--motion-reveal: 400ms`, `--motion-ease-out`, `--reveal-offset: 6px`, `--reveal-blur: 6px`. Mismos valores que el original de Magic UI; la evidencia no pedía cambiarlos.
+- **Guardrail 1 intacto:** el HTML del servidor no esconde nada. El estado oculto se aplica solo tras hidratar y solo a elementos que aún están bajo el pliegue; lo que ya está en pantalla no parpadea. Verificado con `curl`: cero atributos `data-reveal` en el HTML inicial.
+- `prefers-reduced-motion`: los tokens de reveal pasan a 0 y el elemento aparece sin transición.
+- Escalonado por índice: galería 40 ms (tope en el 8.º), cards de portafolio 60 ms, pasos del proceso 80 ms, citas de reseñas 80 ms.
+
+**Dónde se aplica:** tiles de galería (todas las páginas), cards "Portfolio by event type" (home), los cinco pasos de "How it works", las tres citas de reseñas de la home. **Dónde no:** hero, H1, trust bar, bloque "What we handle", FAQ, formulario — contenido de confianza que debe estar quieto y presente desde el primer frame.
+
+**Delta sobre §1:** la fila "Bordes / motion" pasa de "transiciones 200 ms solo en color/opacidad" a "transiciones 200 ms en color/opacidad **más un reveal de entrada de 400 ms (opacidad, 6px, blur 6px) en galería, cards, pasos y citas**". Sigue sin parallax, sin autoplay, sin contadores.
+
+### Eje Tipografía (display) — decisión final 14-sep-2026: **Playfair Display** · supera a Cormorant Garamond (§1, §2 y brandboard §3)
+
+- **Anclas de búsqueda:** el lockup real (`brand-assets/og-image-1200x630.png`): "CLARAV" en serif de alto contraste con remates finos (transicional/Didone), "decor" en script itálica sin identificar, "EVENT DECOR" en sans geométrico de mayúsculas espaciadas. Consultas Refero: "elegant high-contrast serif display headline paired with letter-spaced uppercase sans-serif labels, warm cream palette, luxury event or wedding studio" · "Didone Bodoni high-contrast serif headline, thin hairline serifs, luxury boutique or bridal brand".
+- **Qué se encontró:** Playfair Display aparece en **uso real** en Christopher Ireland (H display 94 px y 63 px, peso 400, canvas pergamino, líneas finas de 1px: la referencia estructuralmente más parecida a ClaravDecor) y como **sustituto declarado** de los serifs a medida de Laura Monin (`title`), Katherine Pihl (`Ryhmes`) y Liron Moran (`cardinalfruit`). Garamond aparece solo en texto de apoyo (Cup of Couple) o como sustituto de display (Cori Corinne → EB Garamond); ninguna referencia del vertical lo usa como serif de titular.
+- **Opciones evaluadas:** A) mantener Cormorant Garamond (costo cero, encaje medio: old-style más suave que los remates del lockup) · **B) Playfair Display (elegida)** · C) EB Garamond (más legible que Cormorant en H3, menos afín al contraste del logo).
+- **Por qué encaja B:** Playfair es transicional con hairlines, lo más cercano al monograma CV y a "CLARAV"; sostiene el titular a 38–48 px con peso 400 sin leer decorativo (la palanca pide legible), y el par serif de alto contraste + sans espaciado replica exactamente la relación "CLARAV / EVENT DECOR" del lockup. Montserrat no cambia: es el amarre con "EVENT DECOR".
+- **Ajustes derivados:** `--fs-h1` pasa de `clamp(2.375rem, 4.5vw, 3.25rem)` a `clamp(2.375rem, 4.5vw, 3rem)` (máx. 52 → 48 px) por la mayor altura de x de Playfair; H2/H3 sin cambio. Se cargan dos cortes (400, 500) en vez de tres; el número de paso de "How it works" pasa de peso 300 a 400 porque Playfair no tiene 300. La regla "serif nunca por debajo de 20 px" se mantiene. El brandboard §3 queda superado en la familia de titulares; el cuerpo (Montserrat 400/500/600/700) no cambia.
+- **Decidió:** Luis, 14-sep-2026, con las tres opciones y su evidencia sobre la mesa.
+
+**Extensión 14-sep — nav y subtítulos en Playfair (decidió Luis tras ver el hero).**
+- **Qué se pidió:** menos familias visibles en pantalla; el hero en Playfair fijó el tono y la nav y los subtítulos en Montserrat leían como una tercera voz.
+- **Evidencia:** Cup of Couple usa un serif de titulación (Perpetua Titling) en todos los encabezados de sección y deja el sans solo para cuerpo y nav; Christopher Ireland pone los enlaces de categoría en Playfair; Cori Corinne lleva la nav a 18 px, peso 400, en caja normal. Ninguna referencia del grupo usa serif en mayúsculas espaciadas pequeñas, así que la nav en serif va en caja normal, no en el estilo eyebrow.
+- **Decisión:** nav de escritorio y dropdown en Playfair 500 a 16 px, caja normal (menú móvil a 18 px); subtítulos H3/H4 ("We handle", títulos de paso, "Core area", nombres de tarjeta) y preguntas del FAQ en Playfair 500 a 24 px (utilidad `.subtitle`). Eyebrows, botones, cuerpo, captions y títulos de columna del footer siguen en Montserrat: son la capa funcional y el amarre con "EVENT DECOR".
+- **Delta sobre §1/§2 y brandboard §3:** `--fs-h4` 22 → 24 px, `--fw-h4` 600 → 500, `h4` pasa a `--font-display`; la nota "H4 Montserrat" del brandboard queda superada. Excepción documentada a "serif nunca por debajo de 20 px": la nav va a 16 px porque Playfair 500 conserva el trazo en tamaños de interfaz, a diferencia de Cormorant; si en QA de móvil se ve fina, subir a 17 px antes que volver a sans.

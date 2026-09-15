@@ -15,7 +15,7 @@ export function HonestBlock() {
 
         <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h3 className="!text-h4 !font-sans !font-semibold text-secondary-foreground">We handle</h3>
+            <h3 className="subtitle text-secondary-foreground">We handle</h3>
             <ul className="mt-5 space-y-4">
               {honest.handle.map((item) => (
                 <li key={item} className="flex gap-3 border-t border-secondary-foreground/15 pt-4 text-secondary-muted">
@@ -26,7 +26,7 @@ export function HonestBlock() {
             </ul>
           </div>
           <div>
-            <h3 className="!text-h4 !font-sans !font-semibold text-secondary-foreground">We&apos;re upfront about</h3>
+            <h3 className="subtitle text-secondary-foreground">We&apos;re upfront about</h3>
             <ul className="mt-5 space-y-4">
               {honest.upfront.map((item) => (
                 <li key={item} className="flex gap-3 border-t border-secondary-foreground/15 pt-4 text-secondary-muted">

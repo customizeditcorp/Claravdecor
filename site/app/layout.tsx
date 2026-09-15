@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import type React from "react"
-import { Cormorant_Garamond, Montserrat } from "next/font/google"
+import { Playfair_Display, Montserrat } from "next/font/google"
 
 import "./globals.css"
 import { Navbar } from "@/components/navbar"
@@ -9,10 +9,10 @@ import { JsonLd } from "@/components/json-ld"
 import { localBusinessSchema } from "@/lib/schema"
 import { business, pageMeta } from "@/lib/site"
 
-/* Brandboard §3: exactly seven cuts, display=swap. */
-const cormorant = Cormorant_Garamond({
+/* Display: Playfair Display (design config §7, 14-sep-2026 — supersedes brandboard §3 Cormorant). Six cuts total, display=swap. */
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["400", "500"],
   variable: "--font-display",
   display: "swap",
 })
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
       <body>
         <JsonLd data={localBusinessSchema()} />
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-card focus:px-4 focus:py-2">

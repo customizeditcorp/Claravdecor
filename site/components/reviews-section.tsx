@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { business, homeReviews, type Review } from "@/lib/site"
+import { Reveal } from "@/components/reveal"
 
 /* Quotes with attribution, on --muted, no cards, no stars animation, no rating markup here. */
 export function ReviewQuote({ review, className = "" }: { review: Review; className?: string }) {
@@ -32,8 +33,10 @@ export function ReviewsSection() {
           </p>
         </div>
         <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
-          {homeReviews.map((r) => (
-            <ReviewQuote key={r.name} review={r} />
+          {homeReviews.map((r, i) => (
+            <Reveal key={r.name} delay={i * 80}>
+              <ReviewQuote review={r} />
+            </Reveal>
           ))}
         </div>
         <Link href="/reviews" className="btn btn-outline mt-10">Read all reviews</Link>
