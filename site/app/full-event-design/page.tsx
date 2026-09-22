@@ -85,6 +85,29 @@ export default function FullEventDesignPage() {
         </div>
       </section>
 
+      {/* Bridal showers & intimate weddings — folded section, same criterion as schools/corporate (few photos → section + FAQ, no URL).
+          Copy never repeats client names or dates visible in the photos, and makes no location claim for the weddings. */}
+      <section id="weddings-bridal" className="section-y bg-card" aria-labelledby="weddings-title">
+        <div className="container-c3">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-5">
+              <p className="eyebrow mb-3 text-muted-foreground">Also for</p>
+              <h2 id="weddings-title">Bridal showers &amp; intimate weddings</h2>
+            </div>
+            <div className="md:col-span-7">
+              <p className="lead">
+                The same process works when the palette is sage, blush and cream — and when there are no balloons at all. For bridal showers we design organic arches, welcome signage and table styling around the bride&apos;s colors. For intimate weddings we build balloon-free installations too: macramé ceremony arches with driftwood and pampas, dried-floral aisle entrances, photo walls and fairy-light reception backdrops.
+              </p>
+              <p className="mt-4 text-muted-foreground">
+                Every piece is designed for the venue, shown to you as a mockup once your date is booked, and installed before the first guest arrives. Weddings are quoted as full event design — tell us the venue and the date and we&apos;ll build the quote around them.
+              </p>
+              <Link href={cta.primary.href} className="btn btn-primary mt-8">{cta.primary.label}</Link>
+            </div>
+          </div>
+          <GalleryGrid photos={[...byCategory("bridal-shower"), ...byCategory("wedding")]} columns={4} className="mt-12" />
+        </div>
+      </section>
+
       <FaqSection faqs={service.faqs} title="Questions people ask before booking a full design" />
 
       {/* Gallery embed — representative setups across event types */}

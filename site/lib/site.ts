@@ -163,6 +163,10 @@ export const faqs = {
     question: "Can you match our exact colors?",
     answer: "Yes — when your color isn't available off the shelf, we double-stuff to match it exactly.",
   },
+  weddings: {
+    question: "Do you decorate bridal showers and weddings?",
+    answer: "Yes. Bridal showers follow the same process as any full design — organic arches, welcome signage and table styling in the bride's palette. For intimate weddings we also build balloon-free installations: macramé and driftwood ceremony arches, dried florals and fairy-light backdrops. Both are quoted as full event design around your venue and date.",
+  },
   familyColors: {
     question: "Can you match our exact theme colors?",
     answer: "Yes — when your color isn't available off the shelf, we double-stuff to match it exactly.",
@@ -246,7 +250,7 @@ export const services: Service[] = [
       "A mockup of your design to approve or adjust before the event",
       "Full installation and takedown",
     ],
-    faqs: [faqs.cost, faqs.deposit, faqs.distance, faqs.weather, faqs.schools],
+    faqs: [faqs.cost, faqs.deposit, faqs.distance, faqs.weather, faqs.schools, faqs.weddings],
     ctaLabel: "Get your free quote for your event",
   },
   {

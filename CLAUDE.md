@@ -44,7 +44,7 @@ La tensión registrada: el sitio no puede abrir con confianza y mostrar cuatro f
 
 ## Reglas duras
 
-- **Nada etiquetado `[CONFIRM]` o `[TO CONFIRM]` se publica.** Hoy eso incluye: el nombre del método "Diseño Anclado al Espacio" (falta confirmación de Clara), la garantía como "garantía" (falta acotarla por escrito), el seguro / COI (no activo), un mockup real de ejemplo, fotos de Clara trabajando, y nombres de niños o logo Pfizer en fotos (confirmar foto por foto).
+- **Nada etiquetado `[CONFIRM]` o `[TO CONFIRM]` se publica.** Hoy eso incluye: el nombre del método "Diseño Anclado al Espacio" (falta confirmación de Clara), la garantía como "garantía" (falta acotarla por escrito), el seguro / COI (no activo) y un mockup real de ejemplo. Resuelto el 21-sep-2026: fotos de Clara trabajando y nombres de niños, logo Pfizer, "Twinberry Isle" y la pareja de la boda ya están autorizados foto por foto (ver `04-Fotos/02-procesadas/mapa-fotos.csv`, columna flags). Las 3 fotos en `nuevas fotos/procesadas/_confirmar-con-clara/` siguen fuera hasta que Luis confirme la ocasión.
 - Las reseñas se citan con el nombre del reseñador tal como aparece en Google. Markup de rating solo con export.
 - Diseño y tokens: `05-Website/10-Design-Config-ClaravDecor-2026-09-12.md`. Prompt de build: `05-Website/12-Prompt-Build-Claude-Code-ClaravDecor-2026-09-12.md`. NAP canónico: `06-Entregables/07-NAP-Canonico-y-Anexo-NAP-Claravdecor-2026-09-12.md`.
 

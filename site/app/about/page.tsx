@@ -7,7 +7,7 @@ import { HonestBlock } from "@/components/honest-block"
 import { CtaBand } from "@/components/cta-band"
 import { JsonLd } from "@/components/json-ld"
 import { pageMeta, business, cta, trustFacts } from "@/lib/site"
-import { heroPhotos, byFile, photoSrc } from "@/lib/photos"
+import { heroPhotos, teamPhoto, teamPhotoSrc } from "@/lib/photos"
 import { breadcrumbSchema } from "@/lib/schema"
 
 const path = "/about"
@@ -24,12 +24,17 @@ const crumbs = [
   { name: "About", path },
 ]
 
-const detail = byFile("balloon-bouquets-birthday-bear-close-up-01.jpg")
+const founder = teamPhoto("clara-vento-certificacion-wedding-planning-expert-01.jpg")
+const process = [
+  teamPhoto("clara-vento-instalando-backdrop-avengers-02.jpg"),
+  teamPhoto("clara-vento-preparando-mesa-dulce-01.jpg"),
+  teamPhoto("clara-vento-instalando-arco-baby-shower-01.jpg"),
+]
 
 /*
   About — copy from doc 11 §7. "since 2019" (business) and "10 years of experience" (Clara) are
   never combined into "10 years in business". No insurance mention. Method name not published
-  until Clara confirms it. Photos of Clara at work: [TO CONFIRM] — none exist; using a detail shot.
+  until Clara confirms it. Founder + process photos authorized by Clara (21-sep-2026, "nuevas fotos" CSV).
 */
 export default function AboutPage() {
   return (
@@ -57,9 +62,12 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="md:col-span-5">
-            <div className="gallery-tile">
-              <Image src={photoSrc(detail)} alt={detail.alt} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" />
-            </div>
+            <figure>
+              <div className="gallery-tile">
+                <Image src={teamPhotoSrc(founder)} alt={founder.alt} fill priority sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" style={{ objectPosition: "center 42%" }} />
+              </div>
+              <figcaption className="mt-3 text-caption text-muted-foreground">{business.owner}, founder and lead designer</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -81,6 +89,30 @@ export default function AboutPage() {
             </ul>
             <Link href="/#how-it-works" className="btn btn-outline mt-8">See the five steps</Link>
           </div>
+        </div>
+      </section>
+
+      {/* Behind the scenes — process photos of Clara at work (the person behind the process). */}
+      <section className="section-y bg-background" aria-labelledby="behind-title">
+        <div className="container-c3">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-5">
+              <p className="eyebrow mb-3 text-muted-foreground">Behind the scenes</p>
+              <h2 id="behind-title">The person installing on the day is the one who designed it</h2>
+            </div>
+            <div className="md:col-span-7">
+              <p className="lead">
+                No crew you&apos;ve never met. Clara builds the garlands, sets the backdrop, styles the table and checks every anchor before she leaves — which is why the setup you approved as a mockup is the one your guests walk into.
+              </p>
+            </div>
+          </div>
+          <ul className="mt-10 grid grid-cols-3 gap-2">
+            {process.map((p) => (
+              <li key={p.file} className="gallery-tile">
+                <Image src={teamPhotoSrc(p)} alt={p.alt} fill sizes="33vw" className="object-cover" />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

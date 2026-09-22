@@ -14,6 +14,7 @@ const cards = [
   { label: "Quinceañera", photo: byFile("birthday-balloon-decor-shimmer-wall-pink-garland-13-01.jpg"), href: "/gallery#quinceanera-style", page: "/quinceanera-decorations" },
   { label: "Graduation", photo: byFile("graduation-balloon-decor-garage-arch-red-black-01.jpg"), href: "/gallery#graduation", page: "/full-event-design#schools-corporate" },
   { label: "Corporate & School", photo: byFile("corporate-balloon-decor-office-star-bouquets-blue-01.jpg"), href: "/gallery#corporate-school", page: "/full-event-design#schools-corporate" },
+  { label: "Bridal Shower & Wedding", photo: byFile("bridal-shower-balloon-decor-arch-sage-blush-01.jpg"), href: "/gallery#bridal-shower-wedding", page: "/full-event-design#weddings-bridal" },
 ]
 
 export function PortfolioCards() {
@@ -27,12 +28,12 @@ export function PortfolioCards() {
           </div>
           <Link href="/gallery" className="btn btn-outline">See all our work</Link>
         </div>
-        <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+        <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal as="li" key={c.label} delay={i * 60} className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
               <Link href={c.href} className="block">
                 <div className="gallery-tile">
-                  <Image src={photoSrc(c.photo)} alt={c.photo.alt} fill sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw" className="object-cover" />
+                  <Image src={photoSrc(c.photo)} alt={c.photo.alt} fill sizes="(min-width: 768px) 33vw, 50vw" className="object-cover" />
                 </div>
               </Link>
               <div className="p-4">
