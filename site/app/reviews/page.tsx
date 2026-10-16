@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 
+import { pageMetadata } from "@/lib/seo"
+
 import { PageHero } from "@/components/page-hero"
 import { ReviewQuote } from "@/components/reviews-section"
 import { CtaBand } from "@/components/cta-band"
@@ -10,12 +12,7 @@ import { breadcrumbSchema } from "@/lib/schema"
 
 const path = "/reviews"
 
-export const metadata: Metadata = {
-  title: { absolute: pageMeta.reviews.title },
-  description: pageMeta.reviews.description,
-  alternates: { canonical: path },
-  openGraph: { title: pageMeta.reviews.title, description: pageMeta.reviews.description, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: pageMeta.reviews.title, description: pageMeta.reviews.description, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },

@@ -15,9 +15,9 @@ export function ProcessSteps({ compact = false }: { compact?: boolean }) {
         <div className="md:col-span-5">
           <div className="md:sticky md:top-28">
             <p className="eyebrow mb-3 text-muted-foreground">Our process</p>
-            <h2 id="process-title">From your idea to a room that&apos;s already done</h2>
+            <h2 id="process-title">How does booking with ClaravDecor work?</h2>
             <p className="lead mt-5 text-muted-foreground">
-              Every design starts with your actual space and ends with a mockup you approve before we build anything. Five steps, no surprises.
+              In five steps: tell us your idea, we read your space, you lock in your date, we design it and show you a mockup, and we set up and take down. Every design starts with your actual space and ends with a mockup you approve before we build anything.
             </p>
             <Link href={cta.primary.href} className="btn btn-primary mt-8">{cta.primary.label}</Link>
           </div>

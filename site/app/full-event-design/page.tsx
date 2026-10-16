@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { HonestBlock } from "@/components/honest-block"
@@ -14,12 +16,7 @@ import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema"
 const service = getService("full-event-design")!
 const path = "/full-event-design"
 
-export const metadata: Metadata = {
-  title: { absolute: service.metaTitle },
-  description: service.metaDescription,
-  alternates: { canonical: path },
-  openGraph: { title: service.metaTitle, description: service.metaDescription, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: service.metaTitle, description: service.metaDescription, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -62,7 +59,7 @@ export default function FullEventDesignPage() {
           <div className="grid gap-10 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-5">
               <p className="eyebrow mb-3 text-muted-foreground">Also for</p>
-              <h2 id="schools-title">Schools, graduations &amp; corporate events</h2>
+              <h2 id="schools-title">Do you decorate school, graduation and corporate events?</h2>
             </div>
             <div className="md:col-span-7">
               <p className="lead">
@@ -92,7 +89,7 @@ export default function FullEventDesignPage() {
           <div className="grid gap-10 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-5">
               <p className="eyebrow mb-3 text-muted-foreground">Also for</p>
-              <h2 id="weddings-title">Bridal showers &amp; intimate weddings</h2>
+              <h2 id="weddings-title">Do you decorate bridal showers and weddings?</h2>
             </div>
             <div className="md:col-span-7">
               <p className="lead">

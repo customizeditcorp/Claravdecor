@@ -7,7 +7,7 @@ import { photoSrc, type Photo } from "@/lib/photos"
 export function PageHero({ photo, title, crumbs, eyebrow, position = "center 35%" }: { photo: Photo; title: string; crumbs: Crumb[]; eyebrow?: string; position?: string }) {
   return (
     <section className="relative flex min-h-[46vh] items-end md:min-h-[52vh]">
-      <Image src={photoSrc(photo)} alt={photo.alt} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: position }} />
+      <Image src={photoSrc(photo)} alt={photo.alt} fill priority fetchPriority="high" sizes="100vw" className="object-cover" style={{ objectPosition: position }} />
       <div className="hero-scrim-gradient absolute inset-0" aria-hidden="true" />
       <div className="container-c3 relative pb-12 pt-28 md:pb-16">
         <div className="max-w-3xl">

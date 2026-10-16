@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 
 import { PageHero } from "@/components/page-hero"
@@ -11,12 +13,7 @@ import { breadcrumbSchema } from "@/lib/schema"
 
 const path = "/gallery"
 
-export const metadata: Metadata = {
-  title: { absolute: pageMeta.gallery.title },
-  description: pageMeta.gallery.description,
-  alternates: { canonical: path },
-  openGraph: { title: pageMeta.gallery.title, description: pageMeta.gallery.description, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: pageMeta.gallery.title, description: pageMeta.gallery.description, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },

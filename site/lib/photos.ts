@@ -1,5 +1,5 @@
 /*
-  Photo registry — 04-Fotos/02-procesadas (25 files 14-sep-2026 + 34 decor and 6 founder/process photos 21-sep-2026, all authorized by Clara).
+  Photo registry — 04-Fotos/02-procesadas (25 files 14-sep-2026 + 34 decor and 6 founder/process photos 21-sep-2026 + 9 decor and 1 founder photo 16-oct-2026, all authorized by Clara).
   alt text is verbatim from alt-map.json. Do not rename files or reassign cities.
   `small` = ≤1000px source; thumbnail only, never hero/banner (design config §3).
 */
@@ -87,6 +87,16 @@ export const photos: Photo[] = [
   { file: "wedding-macrame-photo-wall-driftwood-floral-01.jpg", alt: "Wedding party posing in front of a macrame and driftwood photo wall with white floral accents", category: "wedding", width: 1066, height: 1600 },
   { file: "wedding-ceremony-aisle-dried-pampas-floral-entrance-01.jpg", alt: "Wide view of a wedding ceremony aisle with dried pampas grass and floral entrance installations and an olive green runner", category: "wedding", width: 1600, height: 1066 },
   { file: "wedding-reception-fairy-light-ivy-backdrop-01.jpg", alt: "Bride and groom at the cake table in front of a fairy-light, tulle and ivy garland reception backdrop", category: "wedding", width: 1600, height: 1066 },
+  // --- Added 16-oct-2026: lote 10-14-2026 (9 decor), permiso confirmado por Luis 2026-10-16 (CSV reporte-clasificacion-2026-10-14). ---
+  { file: "birthday-balloon-decor-18th-birthday-sage-blush-floral-arch-01.jpg", alt: "Sage and blush balloon garland with white feather and floral accents on an arched alcove backdrop for an 18th birthday", category: "birthday", width: 1125, height: 2000, quinceStyle: true },
+  { file: "birthday-balloon-decor-18th-birthday-sage-blush-floral-arch-02.jpg", alt: "Close-up of the sage and blush balloon garland with feather and floral accents on the 18th birthday backdrop", category: "birthday", width: 1125, height: 2000, quinceStyle: true },
+  { file: "corporate-balloon-decor-step-repeat-navy-red-white-01.jpg", alt: "Navy, red and white balloon garland framing a Neighborhood LTC Pharmacy step-and-repeat backdrop", category: "corporate", width: 1125, height: 2000 },
+  { file: "corporate-balloon-decor-entrance-navy-red-white-01.jpg", alt: "Navy, red and white balloon garland framing the brick entrance of an office building", category: "corporate", width: 1509, height: 2000 },
+  { file: "corporate-balloon-decor-entrance-navy-red-white-02.jpg", alt: "Interior view of the navy, red and white balloon garland framing the glass entrance door", category: "corporate", width: 1125, height: 2000 },
+  { file: "corporate-balloon-decor-garland-detail-navy-red-white-01.jpg", alt: "Detail of a navy, red and white balloon garland cascading along a glass office doorway", category: "corporate", width: 1125, height: 2000 },
+  { file: "corporate-balloon-decor-garland-with-clara-01.jpg", alt: "Clara Vento standing beside the navy, red and white balloon garland at the Neighborhood LTC Pharmacy office", category: "corporate", width: 1125, height: 2000 },
+  { file: "baby-shower-balloon-decor-blush-cream-arch-floral-sconce-01.jpg", alt: "Blush pink and cream organic balloon garland on a two-tone arch wall with floral wall sconces for a baby shower", category: "baby-shower", width: 1125, height: 2000 },
+  { file: "baby-shower-balloon-decor-blush-cream-arch-floral-sconce-02.jpg", alt: "Detail of a floral wall sconce and a Baby in Bloom sign beside the blush and cream balloon garland", category: "baby-shower", width: 1125, height: 2000 },
 ]
 
 /** Founder / process photos — not decor, never in gallery groups. Used on /about (design config §3, "la persona detrás del proceso"). */
@@ -98,6 +108,8 @@ export const teamPhotos: TeamPhoto[] = [
   { file: "clara-vento-instalando-arco-baby-shower-01.jpg", alt: "Clara Vento installing a green, white and gold organic balloon arch for an outdoor baby shower", width: 1440, height: 1440 },
   { file: "clara-vento-preparando-mesa-dulce-01.jpg", alt: "Clara Vento, wearing a ClaravDecor branded shirt, arranging a dessert table with flowers", width: 1200, height: 1600 },
   { file: "clara-vento-preparando-mesa-dulce-02.jpg", alt: "Clara Vento setting glassware on a dessert table decorated with flowers", width: 1200, height: 1600 },
+  // --- Added 16-oct-2026: alternativa de foto de Clara para /about (lote 10-14-2026). ---
+  { file: "clara-vento-con-arco-baby-shower-blush-01.jpg", alt: "Clara Vento standing in front of the blush pink and cream baby shower balloon arch", width: 1125, height: 2000 },
 ]
 
 export function teamPhoto(file: string): TeamPhoto {

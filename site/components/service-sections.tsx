@@ -12,7 +12,8 @@ export function ServiceIntro({ service, secondaryHref = "/gallery", secondaryLab
     <section className="section-y bg-background" aria-labelledby="included-title">
       <div className="container-c3 grid gap-12 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-6">
-          <p className="lead">{service.intro}</p>
+          <p className="lead">{service.definition}</p>
+          <p className="mt-4 text-muted-foreground">{service.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href={cta.primary.href} className="btn btn-primary">{service.ctaLabel}</Link>
             <Link href={secondaryHref} className="btn btn-outline">{secondaryLabel}</Link>
@@ -35,7 +36,7 @@ export function ServiceIntro({ service, secondaryHref = "/gallery", secondaryLab
 }
 
 /* Three-line process summary linking to the full five steps on the home page. */
-export function ProcessSummary({ title = "Designed around your space, approved before we build", body }: { title?: string; body?: string }) {
+export function ProcessSummary({ title = "Why do we read your venue before designing?", body }: { title?: string; body?: string }) {
   return (
     <section className="section-y bg-card" aria-labelledby="process-summary-title">
       <div className="container-c3 grid gap-10 md:grid-cols-12 md:gap-16">

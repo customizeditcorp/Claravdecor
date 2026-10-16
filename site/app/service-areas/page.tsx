@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 
 import { PageHero } from "@/components/page-hero"
@@ -11,12 +13,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema"
 
 const path = "/service-areas"
 
-export const metadata: Metadata = {
-  title: { absolute: pageMeta.serviceAreas.title },
-  description: pageMeta.serviceAreas.description,
-  alternates: { canonical: path },
-  openGraph: { title: pageMeta.serviceAreas.title, description: pageMeta.serviceAreas.description, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: pageMeta.serviceAreas.title, description: pageMeta.serviceAreas.description, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -77,10 +74,13 @@ export default function ServiceAreasPage() {
         <div className="container-c3 grid gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <p className="eyebrow mb-3 text-muted-foreground">Same process everywhere</p>
-            <h2 id="same-process-title">Every venue gets read before it gets designed</h2>
+            <h2 id="same-process-title">Which cities does ClaravDecor serve, and is there a travel fee?</h2>
           </div>
           <div className="md:col-span-7">
             <p className="lead">
+              {areas.core.join(", ")} with no travel fee; {areas.extended.join(", ")} with a distance fee shown in your quote.
+            </p>
+            <p className="mt-4 text-muted-foreground">
               Whether it&apos;s a backyard in Plano, a community hall in Richardson or an office lobby in Addison, we ask the same questions first: indoor or outdoor, what surface, what power, what weather. Then we design for that space, show you the mockup, and install before your first guest.
             </p>
             <Link href="/#how-it-works" className="btn btn-outline mt-8">See our full process</Link>

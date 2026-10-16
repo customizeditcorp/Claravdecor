@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 
 import { PageHero } from "@/components/page-hero"
@@ -15,12 +17,7 @@ import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema"
 const service = getService("quinceanera-decorations")!
 const path = "/quinceanera-decorations"
 
-export const metadata: Metadata = {
-  title: { absolute: service.metaTitle },
-  description: service.metaDescription,
-  alternates: { canonical: path },
-  openGraph: { title: service.metaTitle, description: service.metaDescription, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: service.metaTitle, description: service.metaDescription, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -46,14 +43,14 @@ export default function QuinceaneraPage() {
         <div className="container-c3 grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <p className="eyebrow mb-3 text-muted-foreground">For her</p>
-            <h2 id="her-day-title" className="!text-h3">Her theme, her colors — built exactly</h2>
+            <h2 id="her-day-title" className="!text-h3">Can you match her exact theme and colors?</h2>
             <p className="mt-5 text-muted-foreground">
               Bring the Pinterest board, the dress color, the number, the theme. We design the backdrop, the garland and the tables around it and match the palette exactly — double-stuffed when the shade doesn&apos;t exist off the shelf. Before anything is built, she sees the mockup and can adjust it.
             </p>
           </div>
           <div>
             <p className="eyebrow mb-3 text-muted-foreground">For mom</p>
-            <h2 className="!text-h3">A plan you approve, a day you don&apos;t have to manage</h2>
+            <h2 className="!text-h3">How does booking work for the parents?</h2>
             <p className="mt-5 text-muted-foreground">
               You get an itemized quote before you pay anything, a deposit that reserves the date exclusively, and a design to approve once it&apos;s booked. On the day, we install before the first guest arrives and take everything down on schedule — so you&apos;re a guest at your daughter&apos;s party, not the coordinator.
             </p>
@@ -62,7 +59,7 @@ export default function QuinceaneraPage() {
         </div>
       </section>
 
-      <ProcessSummary title="From her idea to the room she walks into" body="We start by reading the venue — indoor or outdoor, wall or free-standing, power for marquee numbers, how the light falls — so the structure holds and photographs well. Once the date is booked, we design it and send a mockup to approve before we build." />
+      <ProcessSummary title="How does the design process work for a quinceañera?" body="We start by reading the venue — indoor or outdoor, wall or free-standing, power for marquee numbers, how the light falls — so the structure holds and photographs well. Once the date is booked, we design it and send a mockup to approve before we build." />
 
       <HonestBlock />
 

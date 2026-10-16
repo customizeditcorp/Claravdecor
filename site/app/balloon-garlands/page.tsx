@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 
 import { PageHero } from "@/components/page-hero"
@@ -14,12 +16,7 @@ import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema"
 const service = getService("balloon-garlands")!
 const path = "/balloon-garlands"
 
-export const metadata: Metadata = {
-  title: { absolute: service.metaTitle },
-  description: service.metaDescription,
-  alternates: { canonical: path },
-  openGraph: { title: service.metaTitle, description: service.metaDescription, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: service.metaTitle, description: service.metaDescription, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -52,7 +49,7 @@ export default function BalloonGarlandsPage() {
         <div className="container-c3 grid gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <p className="eyebrow mb-3 text-muted-foreground">Pricing</p>
-            <h2 id="anchor-title">What {pricing.anchor} gets you</h2>
+            <h2 id="anchor-title">What does a {pricing.anchor} balloon garland include?</h2>
           </div>
           <div className="md:col-span-7">
             <p className="lead">
@@ -69,7 +66,7 @@ export default function BalloonGarlandsPage() {
         <div className="container-c3 grid gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <p className="eyebrow mb-3 text-muted-foreground">Built to hold</p>
-            <h2 id="built-title">A garland that stays where we put it</h2>
+            <h2 id="built-title">How do you make sure the garland holds through the event?</h2>
           </div>
           <div className="md:col-span-7 space-y-5">
             <p className="lead">

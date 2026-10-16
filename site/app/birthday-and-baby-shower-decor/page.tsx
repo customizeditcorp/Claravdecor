@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 
 import { PageHero } from "@/components/page-hero"
@@ -14,12 +16,7 @@ import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema"
 const service = getService("birthday-and-baby-shower-decor")!
 const path = "/birthday-and-baby-shower-decor"
 
-export const metadata: Metadata = {
-  title: { absolute: service.metaTitle },
-  description: service.metaDescription,
-  alternates: { canonical: path },
-  openGraph: { title: service.metaTitle, description: service.metaDescription, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: service.metaTitle, description: service.metaDescription, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -47,7 +44,7 @@ export default function BirthdayBabyShowerPage() {
           <div className="grid gap-10 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-5">
               <p className="eyebrow mb-3 text-muted-foreground">Birthdays</p>
-              <h2 id="birthday-title">Birthday parties</h2>
+              <h2 id="birthday-title">What birthday balloon decor do you offer?</h2>
             </div>
             <div className="md:col-span-7">
               <p className="lead">
@@ -68,7 +65,7 @@ export default function BirthdayBabyShowerPage() {
           <div className="grid gap-10 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-5">
               <p className="eyebrow mb-3 text-muted-foreground">Baby showers &amp; gender reveals</p>
-              <h2 id="shower-title">Baby showers &amp; gender reveals</h2>
+              <h2 id="shower-title">How do you set up baby shower and gender reveal decor safely?</h2>
             </div>
             <div className="md:col-span-7">
               <p className="lead">

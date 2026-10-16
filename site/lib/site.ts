@@ -88,7 +88,7 @@ export const processSteps = [
 
 /** "What we handle, and what we don't" — the cheapest trust piece. */
 export const honest = {
-  heading: "Honest about what we can promise",
+  heading: "What do we control, and what don't we?",
   handle: [
     "Building to your approved mockup",
     "Choosing balloons and technique for your exact site, indoor or outdoor",
@@ -224,6 +224,8 @@ export type Service = {
   metaDescription: string
   h1: string
   intro: string
+  /** Answer-first definition (what, for whom, where, from how much) — the sentence an answer engine quotes. */
+  definition: string
   /** schema.org Service.serviceType */
   serviceType: string
   included: string[]
@@ -241,6 +243,7 @@ export const services: Service[] = [
     metaDescription: "Custom event design for North Dallas — backdrops, balloon architecture and full-room styling, built for your space and approved before your event. Free quote in 24–48 hrs.",
     h1: "Full Event Design in North Dallas",
     intro: "You imagined a room. We build it to match — backdrops, balloon architecture, pedestals, signage and table styling designed around your actual space, not a catalog. You approve the design before the event, then walk into a room that's already finished.",
+    definition: "Full event design is ClaravDecor's complete service: backdrop, balloon architecture, pedestals, signage and table styling designed as one concept for your venue in North Dallas, approved as a mockup after booking and installed before your first guest.",
     serviceType: "Full event decor design and installation",
     included: [
       "Custom backdrop and balloon architecture, sized and colored to your event",
@@ -261,6 +264,7 @@ export const services: Service[] = [
     metaDescription: "Organic balloon garlands in North Dallas from $250 — up to 8 ft, up to 3 colors, delivered, installed and taken down. Color-matched to your palette. Free quote in 24–48 hrs.",
     h1: "Balloon Garlands in North Dallas — From $250",
     intro: "The easiest way to start. An organic balloon garland in your exact colors, delivered and installed before your guests arrive — and gone when it's over. No kits, no ladders, no guessing whether it will hold.",
+    definition: "A balloon garland from ClaravDecor is an organic garland up to 8 ft in up to 3 colors, color-matched to your palette, delivered and installed within 20 miles of 75248 for $250, takedown included.",
     serviceType: "Organic balloon garland design and installation",
     included: [
       "Organic balloon garland up to 8 ft, up to 3 colors",
@@ -280,6 +284,7 @@ export const services: Service[] = [
     metaDescription: "Custom quinceañera decor in North Dallas — backdrops, balloon garlands, marquee numbers and table styling designed around her theme. Free quote in 24–48 hrs.",
     h1: "Quinceañera Decorations in North Dallas",
     intro: "Her theme, her colors, her day — built into a room she walks into and recognizes immediately. Balloon garlands, arch backdrops, marquee numbers, and main table and dessert table styling, designed around her vision and approved before the big day.",
+    definition: "ClaravDecor designs quinceañera decorations in North Dallas: backdrop, garland, marquee number and table styling in her exact palette, booked 3–8 months ahead and approved as a mockup before the day.",
     serviceType: "Quinceañera decoration design and installation",
     included: [
       "Custom backdrop and garland in her palette",
@@ -299,6 +304,7 @@ export const services: Service[] = [
     metaDescription: "Balloon backdrops, arches and columns for birthdays, baby showers and gender reveals across North Dallas — designed around your theme, installed and gone before you have to think about it.",
     h1: "Birthday, Baby Shower & Gender Reveal Decorations in North Dallas",
     intro: "From a first birthday to a milestone one, and from the baby shower to the reveal itself, we design the backdrop and balloon setup around your theme — and it's ready before the first guest arrives.",
+    definition: "ClaravDecor designs birthday, baby shower and gender reveal balloon decor across North Dallas: themed backdrops, arches and columns sized to your venue, installed before guests arrive and taken down after.",
     serviceType: "Birthday, baby shower and gender reveal balloon decor",
     included: [
       "Custom backdrop or arch in your palette",

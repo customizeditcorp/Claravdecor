@@ -9,11 +9,11 @@ export function PricingPosture() {
       <div className="container-c3 grid gap-10 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-5">
           <p className="eyebrow mb-3 text-muted-foreground">Pricing</p>
-          <h2 id="pricing-title">Start from {pricing.anchor}</h2>
+          <h2 id="pricing-title">How much does balloon decor cost in North Dallas?</h2>
         </div>
         <div className="md:col-span-7">
           <p className="lead">
-            Our organic balloon garland — {pricing.garlandSpec} — is the easiest way to start. Full event design is quoted around your space and your vision. {pricing.quoteTerms}
+            Our organic balloon garland starts at {pricing.anchor} — {pricing.garlandSpec}. Full event design is quoted around your space and your vision, free, with no obligation, in 24–48 business hours.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/balloon-garlands" className="btn btn-secondary">See garland details</Link>

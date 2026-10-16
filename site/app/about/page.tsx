@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -12,19 +14,14 @@ import { breadcrumbSchema } from "@/lib/schema"
 
 const path = "/about"
 
-export const metadata: Metadata = {
-  title: { absolute: pageMeta.about.title },
-  description: pageMeta.about.description,
-  alternates: { canonical: path },
-  openGraph: { title: pageMeta.about.title, description: pageMeta.about.description, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: pageMeta.about.title, description: pageMeta.about.description, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },
   { name: "About", path },
 ]
 
-const founder = teamPhoto("clara-vento-certificacion-wedding-planning-expert-01.jpg")
+const founder = teamPhoto("clara-vento-con-arco-baby-shower-blush-01.jpg")
 const process = [
   teamPhoto("clara-vento-instalando-backdrop-avengers-02.jpg"),
   teamPhoto("clara-vento-preparando-mesa-dulce-01.jpg"),
@@ -64,7 +61,7 @@ export default function AboutPage() {
           <div className="md:col-span-5">
             <figure>
               <div className="gallery-tile">
-                <Image src={teamPhotoSrc(founder)} alt={founder.alt} fill priority sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" style={{ objectPosition: "center 42%" }} />
+                <Image src={teamPhotoSrc(founder)} alt={founder.alt} fill priority sizes="(min-width: 768px) 40vw, 100vw" className="object-cover" style={{ objectPosition: "center 35%" }} />
               </div>
               <figcaption className="mt-3 text-caption text-muted-foreground">{business.owner}, founder and lead designer</figcaption>
             </figure>
@@ -76,10 +73,13 @@ export default function AboutPage() {
         <div className="container-c3 grid gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <p className="eyebrow mb-3 text-muted-foreground">How we work</p>
-            <h2 id="how-we-work-title">Designed for the space it&apos;s going in</h2>
+            <h2 id="how-we-work-title">Who designs and installs your event?</h2>
           </div>
           <div className="md:col-span-7">
             <p className="lead">
+              {business.owner}, founder of {business.name}, with {business.ownerExperience}, based in North Dallas since {business.since}. She reads the venue, designs the mockup and installs on the day.
+            </p>
+            <p className="mt-4 text-muted-foreground">
               Before a single balloon is inflated, we look at where it&apos;s going: indoor or outdoor, what the structure will anchor to, whether there&apos;s power for lit numbers, how much sun and wind the spot gets. That decides sizes, technique and materials — so the setup holds through the event and photographs the way it looked when we left.
             </p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">

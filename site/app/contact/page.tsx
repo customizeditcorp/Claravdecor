@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+
+import { pageMetadata } from "@/lib/seo"
 import { Phone, Mail, Instagram, Clock } from "lucide-react"
 
 import { PageHero } from "@/components/page-hero"
@@ -11,12 +13,7 @@ import { FaqSection } from "@/components/faq"
 
 const path = "/contact"
 
-export const metadata: Metadata = {
-  title: { absolute: pageMeta.contact.title },
-  description: pageMeta.contact.description,
-  alternates: { canonical: path },
-  openGraph: { title: pageMeta.contact.title, description: pageMeta.contact.description, url: path },
-}
+export const metadata: Metadata = pageMetadata({ title: pageMeta.contact.title, description: pageMeta.contact.description, path: path })
 
 const crumbs = [
   { name: "Home", path: "/" },

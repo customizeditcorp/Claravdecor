@@ -16,6 +16,7 @@ export function localBusinessSchema() {
     url: business.url,
     telephone: business.phoneE164,
     email: business.email,
+    priceRange: "From $250",
     image: `${business.url}/og-image-1200x630.png`,
     logo: `${business.url}/brand/clarav-lockup-horizontal-taupe.svg`,
     foundingDate: String(business.since),
