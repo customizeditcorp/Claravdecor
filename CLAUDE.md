@@ -44,7 +44,7 @@ La tensión registrada: el sitio no puede abrir con confianza y mostrar cuatro f
 
 ## Reglas duras
 
-- **Nada etiquetado `[CONFIRM]` o `[TO CONFIRM]` se publica.** Hoy eso incluye: el nombre del método "Diseño Anclado al Espacio" (falta confirmación de Clara), la garantía como "garantía" (falta acotarla por escrito), el seguro / COI (no activo) y un mockup real de ejemplo. Resuelto el 21-sep-2026: fotos de Clara trabajando y nombres de niños, logo Pfizer, "Twinberry Isle" y la pareja de la boda ya están autorizados foto por foto (ver `04-Fotos/02-procesadas/mapa-fotos.csv`, columna flags). Las 3 fotos en `nuevas fotos/procesadas/_confirmar-con-clara/` siguen fuera hasta que Luis confirme la ocasión.
+- **Nada etiquetado `[CONFIRM]` o `[TO CONFIRM]` se publica.** Hoy eso incluye: el nombre del método "Diseño Anclado al Espacio" (falta confirmación de Clara), la garantía como "garantía" (falta acotarla por escrito), el seguro / COI (no activo) y un mockup real de ejemplo. Resuelto el 21-sep-2026: fotos de Clara trabajando y nombres de niños, logo Pfizer, "Twinberry Isle" y la pareja de la boda ya están autorizados foto por foto (ver `04-Fotos/02-procesadas/mapa-fotos.csv`, columna flags). Las 3 fotos en `04-Fotos/03-lotes/2026-09-21/_confirmar-con-clara/` siguen fuera hasta que Luis confirme la ocasión.
 - Las reseñas se citan con el nombre del reseñador tal como aparece en Google. Markup de rating solo con export.
 - Diseño y tokens: `05-Website/10-Design-Config-ClaravDecor-2026-09-12.md`. Prompt de build: `05-Website/12-Prompt-Build-Claude-Code-ClaravDecor-2026-09-12.md`. NAP canónico: `06-Entregables/07-NAP-Canonico-y-Anexo-NAP-Claravdecor-2026-09-12.md`.
 
@@ -52,7 +52,7 @@ La tensión registrada: el sitio no puede abrir con confianza y mostrar cuatro f
 
 - Convención de nombres: la fecha en el nombre de un documento es la de creación, no la de última edición. Un archivo puede tener una versión más reciente en su contenido sin renombrarse (ej. el sitemap 12-sep contiene la v2 del 14-sep).
 - Las fotos listas para web están en `04-Fotos/02-procesadas/` (máx. 2000 px, nombres SEO, `alt-map.json` con los textos alternativos).
-- `04-Fotos/01-gbp-raw/` está en `.gitignore` y no se sube al repo.
+- `04-Fotos/01-gbp-raw/` (originales de GBP y de cada lote) está en `.gitignore` y no se sube al repo. Esquema completo en `04-Fotos/README.md`; reportes de cada lote en `04-Fotos/03-lotes/`.
 
 ## Sitio web (Next.js) — `site/`
 
@@ -60,4 +60,4 @@ La tensión registrada: el sitio no puede abrir con confianza y mostrar cuatro f
 - Host canónico: `https://claravdecor.com` (apex, sin www), fijado en `business.url` de `site/lib/site.ts`.
 - Comandos: `npm --prefix site run build` (build de producción), `npm --prefix site run dev` (desarrollo). Servidores de preview en `.claude/launch.json` (`claravdecor-site` en el puerto 3050, `claravdecor-dev` en el 3051).
 - QA obligatoria antes de publicar: ver el source con JS desactivado (o `curl`) y confirmar copy, `alt` y bloques `ld+json`. Los pendientes visibles en el sitio llevan `data-pending="..."`; buscar ese atributo para localizar lo que falta confirmar con Clara.
-- El formulario de contacto envía a `CONTACT_WEBHOOK_URL` (variable de entorno). Sin ella, el formulario muestra los canales directos en lugar de fingir el envío.
+- El formulario de contacto envía por correo a `info@claravdecor.com` vía Resend (`RESEND_API_KEY`, opcional `CONTACT_FROM`/`CONTACT_TO`), con `CONTACT_WEBHOOK_URL` como respaldo. Sin ninguna de las dos, muestra los canales directos en lugar de fingir el envío.
