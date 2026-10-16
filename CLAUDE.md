@@ -9,7 +9,7 @@ Fuente de verdad de las decisiones estratégicas: `02-Brief-OFV/2026-07-22-curad
 - **Dominante: Riesgo / Confianza.** El buyer (Marisol) compra tranquilidad, no precio: "no busca lo más barato, busca que no le salga mal". Sus miedos son que se desinfle, que se caiga, que salga chueco en las fotos, que no quede como en la foto.
 - **De apoyo: Oficio / Método**, con el nombre "Diseño Anclado al Espacio". El método explica *por qué* se puede confiar; no abre la conversación.
 - **Apoyo visual obligatorio:** Prueba visual fue descartada como dominante solo porque los activos no la sostienen hoy (25 fotos, 6-7 eventos, todas verticales, sin fotos de proceso). Se reevalúa cuando haya 15-20 montajes bien fotografiados.
-- **Descartadas como dominante:** Prueba social (7 reseñas, se citan con atribución, no abren), Dolor (compra aspiracional, no reparación), Velocidad (se promete, no se lidera con eso).
+- **Descartadas como dominante:** Prueba social (8 reseñas al 16-oct-2026, se citan con atribución, no abren), Dolor (compra aspiracional, no reparación), Velocidad (se promete, no se lidera con eso).
 
 Evidencia que cruza tres de cuatro fuentes: el mismo hecho, *un proceso que garantiza que quede como imaginaste y aguante el evento*, aparece en el Brief, en las Reviews y en el Buyer. Las reseñas repiten fiabilidad, no belleza: "profesional y responsable", "puntual", "brings to life everything we imagine", "attention to detail".
 

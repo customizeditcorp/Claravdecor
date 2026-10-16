@@ -24,9 +24,11 @@ export const business = {
   instagramHandle: "@claravdecor",
   googleReviews: {
     ratingValue: "5.0",
-    reviewCount: "7",
+    reviewCount: "8",
   },
-  // [TO CONFIRM] Google Place ID — "Leave a review" link stays inactive until we have it.
+  /** Public Google Business Profile (Maps, by CID). Reviews dialog: add #lrd=0x456d7074c65627ed:0x952c501888d861a0,1 to a Google search for "claravdecor". */
+  googleMapsUrl: "https://www.google.com/maps/place/?cid=10749054476931850656",
+  // [TO CONFIRM] Google Place ID — needed only for a direct "write a review" link.
   reviewUrl: null as string | null,
 } as const
 
@@ -187,7 +189,7 @@ export type Review = {
 }
 
 /**
- * 7 real Google reviews, 5.0 average (public GBP). Quoted as text with attribution.
+ * 8 real Google reviews, 5.0 average (public GBP, verified 16-oct-2026). Quoted as text with attribution.
  * No `Review` schema until a verified export with dates exists (doc 11 §9).
  */
 export const reviews: Review[] = [
@@ -339,7 +341,7 @@ export const pageMeta = {
   },
   reviews: {
     title: "Reviews | ClaravDecor",
-    description: "What families, schools and event partners say about ClaravDecor — 7 Google reviews, 5.0 average, quoted with attribution.",
+    description: "What families, schools and event partners say about ClaravDecor — 8 Google reviews, 5.0 average, quoted with attribution.",
     h1: "What Our Clients Say",
   },
   about: {

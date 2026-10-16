@@ -39,7 +39,7 @@ export default function ReviewsPage() {
         <div className="container-c3">
           <h2 id="reviews-list-title" className="sr-only">All reviews</h2>
           <p className="lead max-w-3xl text-muted-foreground">
-            Every review below is public on our Google Business Profile and quoted in the language it was written in. Three of the seven come from clients who book us again and again — a school, an academy, and a mom who calls every birthday.
+            Every review below is public on our Google Business Profile and quoted in the language it was written in. Three of the eight come from clients who book us again and again — a school, an academy, and a mom who calls every birthday.
           </p>
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-x-16">
             {withText.map((r) => (
@@ -55,9 +55,12 @@ export default function ReviewsPage() {
               </figure>
             ))}
           </div>
-          <p className="pending-note mt-12 text-caption text-muted-foreground" data-pending="review-dates">
-            Review dates and full text will be added from the verified Google export.
-          </p>
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            <a href={business.googleMapsUrl} className="btn btn-outline" rel="noopener">Read all reviews on Google</a>
+            <p className="pending-note text-caption text-muted-foreground" data-pending="review-dates">
+              Full text and dates for every review are being added from the public Google profile.
+            </p>
+          </div>
         </div>
       </section>
 

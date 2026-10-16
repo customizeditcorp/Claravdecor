@@ -39,7 +39,10 @@ export function ReviewsSection() {
             </Reveal>
           ))}
         </div>
-        <Link href="/reviews" className="btn btn-outline mt-10">Read all reviews</Link>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <Link href="/reviews" className="btn btn-outline">Read all reviews</Link>
+          <a href={business.googleMapsUrl} className="btn btn-outline" rel="noopener">Read all reviews on Google</a>
+        </div>
       </div>
     </section>
   )
