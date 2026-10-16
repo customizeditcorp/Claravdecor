@@ -5,6 +5,17 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [360, 480, 640, 768, 1024, 1280, 1536, 1920],
   },
+  async redirects() {
+    return [
+      {
+        // Canonical host is the apex (lib/site.ts). www → apex, permanent.
+        source: "/:path*",
+        has: [{ type: "host", value: "www.claravdecor.com" }],
+        destination: "https://claravdecor.com/:path*",
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
